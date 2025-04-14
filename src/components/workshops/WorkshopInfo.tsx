@@ -1,8 +1,13 @@
 
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const WorkshopInfo = () => {
+interface WorkshopInfoProps {
+  onBookWorkshop?: () => void;
+}
+
+const WorkshopInfo: React.FC<WorkshopInfoProps> = ({ onBookWorkshop }) => {
   return (
     <div className="py-16">
       <div className="h-80 bg-cover bg-center relative mb-16" style={{ backgroundImage: `url(/lovable-uploads/bd8e299f-a4b7-423f-8bd4-006ca140972a.png)` }}>
@@ -17,7 +22,7 @@ const WorkshopInfo = () => {
       <div className="container mx-auto px-4 mb-16">
         <h2 className="text-2xl font-medium text-center mb-10">BOOK A WORKSHOP</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <div className="border border-gray-300 p-8">
             <h2 className="text-xl font-medium mb-4 text-center">01</h2>
             <h3 className="text-lg font-medium mb-6 text-center">BOOK A SLOT</h3>
@@ -33,6 +38,15 @@ const WorkshopInfo = () => {
               Make your payment to secure your seat and let us get on to assembling your own little Paitkar kit
             </p>
           </div>
+        </div>
+        
+        <div className="text-center">
+          <Button 
+            onClick={onBookWorkshop}
+            className="bg-ankan-brown hover:bg-ankan-brown/90 text-white px-8 py-3"
+          >
+            Book a Workshop Now
+          </Button>
         </div>
       </div>
       
