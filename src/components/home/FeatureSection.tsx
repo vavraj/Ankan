@@ -21,7 +21,7 @@ const FeatureSection = () => {
                 className="w-full h-64 object-cover"
               />
             </div>
-            <Link to="/collections" className="ankan-btn-secondary mt-4">
+            <Link to="/collections" className="px-6 py-2 bg-white border border-gray-300 rounded-md text-gray-800 hover:bg-gray-100 transition-colors">
               Explore Our Collection
             </Link>
           </div>
@@ -34,7 +34,7 @@ const FeatureSection = () => {
                 className="w-full h-64 object-cover"
               />
             </div>
-            <Link to="/about-paitkar" className="ankan-btn-secondary mt-4">
+            <Link to="/about-paitkar" className="px-6 py-2 bg-white border border-gray-300 rounded-md text-gray-800 hover:bg-gray-100 transition-colors">
               Learn About Paitkar
             </Link>
           </div>
@@ -47,7 +47,7 @@ const FeatureSection = () => {
                 className="w-full h-64 object-cover"
               />
             </div>
-            <Link to="/customise" className="ankan-btn-secondary mt-4">
+            <Link to="/customise" className="px-6 py-2 bg-white border border-gray-300 rounded-md text-gray-800 hover:bg-gray-100 transition-colors">
               Customise your Art
             </Link>
           </div>

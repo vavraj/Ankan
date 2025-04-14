@@ -34,15 +34,16 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-ankan-brown text-white py-4">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Link to="/" className="mr-2">
+    <header>
+      {/* Top navbar with icons */}
+      <div className="bg-[#635651] text-white py-3">
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          <div>
+            <Link to="/" className="ml-2">
               <img 
-                src="/ankan-small-logo.svg" 
+                src="/lovable-uploads/670d19da-f457-4457-8577-c99d89c28663.png" 
                 alt="Ankan Small Logo" 
-                className="w-8 h-8" 
+                className="w-6 h-6" 
               />
             </Link>
           </div>
@@ -50,14 +51,14 @@ const Navbar = () => {
           <div className="flex-1 flex justify-center">
             <Link to="/">
               <img 
-                src="/ankan-logo.svg" 
+                src="/lovable-uploads/37000d57-adc7-438e-bae2-2514f602eac5.png" 
                 alt="Ankan" 
                 className="h-6" 
               />
             </Link>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <Link to="/cart" className="hover:text-gray-200">
               <ShoppingCart size={20} />
             </Link>
@@ -80,71 +81,48 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        
-        <div className="hidden md:flex justify-center mt-4">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link to="/collections">
-                  <NavigationMenuLink className="text-white hover:text-gray-200 px-4 py-2">
-                    SHOP
-                  </NavigationMenuLink>
+      </div>
+      
+      {/* Navigation links - not shown on mobile */}
+      <div className="hidden md:block bg-[#e9e5df] py-3">
+        <div className="container mx-auto">
+          <nav className="flex justify-center">
+            <ul className="flex space-x-8">
+              <li>
+                <Link to="/collections" className="text-gray-800 hover:text-ankan-brown font-medium">
+                  SHOP
                 </Link>
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-white bg-transparent hover:bg-ankan-darkBrown">
+              </li>
+              <li className="relative group">
+                <button className="text-gray-800 hover:text-ankan-brown font-medium flex items-center">
                   ABOUT
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 w-[200px]">
-                    <li>
-                      <Link to="/about-paitkar">
-                        <NavigationMenuLink className={cn(
-                          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        )}>
-                          About Paitkar
-                        </NavigationMenuLink>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/makers">
-                        <NavigationMenuLink className={cn(
-                          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        )}>
-                          Our Artisans
-                        </NavigationMenuLink>
-                      </Link>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <Link to="/support-artisan">
-                  <NavigationMenuLink className="text-white hover:text-gray-200 px-4 py-2">
-                    SUPPORT ARTISAN
-                  </NavigationMenuLink>
+                </button>
+                <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
+                  <Link to="/about-paitkar" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    About Paitkar
+                  </Link>
+                  <Link to="/makers" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    Our Artisans
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <Link to="/support-artisan" className="text-gray-800 hover:text-ankan-brown font-medium">
+                  SUPPORT ARTISAN
                 </Link>
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <Link to="/workshops">
-                  <NavigationMenuLink className="text-white hover:text-gray-200 px-4 py-2">
-                    WORKSHOPS
-                  </NavigationMenuLink>
+              </li>
+              <li>
+                <Link to="/workshops" className="text-gray-800 hover:text-ankan-brown font-medium">
+                  WORKSHOPS
                 </Link>
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <Link to="/contact">
-                  <NavigationMenuLink className="text-white hover:text-gray-200 px-4 py-2">
-                    CONTACT
-                  </NavigationMenuLink>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-800 hover:text-ankan-brown font-medium">
+                  CONTACT
                 </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
       
