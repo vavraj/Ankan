@@ -70,7 +70,7 @@ const AboutPaitkar = () => {
           Pata painting is one of India's oldest folk paintings. In West Bengal, the Patachitra-painting communities are known as Patua. They are also known as Patidar, Patekar, or Paitkar in Jharkhand. Paitkar is derived from the word patekar. Padya is the source of Patachitra. It can be traced back to the following:
         </p>
         <p className="text-lg leading-relaxed mb-6 max-w-6xl mx-auto">
-          Patchitra > Pada chitra > Padya chitra
+          Patchitra {'>'}{'>'} Pada chitra {'>'}{'>'} Padya chitra
         </p>
         <p className="text-lg leading-relaxed max-w-6xl mx-auto">
           Padya or Pada is a two-line rhyming poem. Paitkar painting's narrative scroll style is derived from Pandulipi (a scroll in nature), which was once used by kings to deliver messages to other kings.
@@ -262,3 +262,4 @@ const AboutPaitkar = () => {
 };
 
 export default AboutPaitkar;
+
