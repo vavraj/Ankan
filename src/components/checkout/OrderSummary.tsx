@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Check, Plus } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface OrderSummaryProps {
   orderData: {
@@ -23,6 +24,14 @@ interface OrderSummaryProps {
 }
 
 const OrderSummary: React.FC<OrderSummaryProps> = ({ orderData, isConfirmation }) => {
+  const navigate = useNavigate();
+  
+  const handlePlaceOrder = () => {
+    // In a real app, you would submit the order to your backend here
+    // and then redirect to the confirmation page after successful submission
+    navigate('/order-confirmation');
+  };
+  
   return (
     <div className="border rounded p-6 space-y-6">
       <h2 className="text-xl text-center mb-6">1 Item</h2>
@@ -87,7 +96,12 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderData, isConfirmation }
             </p>
           </div>
           
-          <button className="ankan-btn-primary w-full py-3 mt-4">Place Order</button>
+          <button 
+            className="ankan-btn-primary w-full py-3 mt-4"
+            onClick={handlePlaceOrder}
+          >
+            Place Order
+          </button>
           
           <div className="flex justify-between items-center pt-4 border-t">
             <span>View Details</span>
@@ -100,6 +114,8 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderData, isConfirmation }
             <Check size={32} />
           </div>
           <p className="font-medium text-lg">Your Order Has Been Placed</p>
+          <p className="text-gray-600">Order #AN78562394</p>
+          <p className="text-gray-600">Thank you for your purchase!</p>
           
           <div className="flex justify-between items-center pt-4 border-t">
             <span>View Details</span>
