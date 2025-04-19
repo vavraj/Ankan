@@ -32,7 +32,7 @@ const Navbar = () => {
           <div>
             <Link to="/" className="ml-2">
               <img 
-                src="/lovable-uploads/670d19da-f457-4457-8577-c99d89c28663.png" 
+                src="/lovable-uploads/logo2.png" 
                 alt="Ankan Small Logo" 
                 className="w-6 h-6" 
               />
@@ -42,7 +42,7 @@ const Navbar = () => {
           <div className="flex-1 flex justify-center">
             <Link to="/">
               <img 
-                src="/lovable-uploads/37000d57-adc7-438e-bae2-2514f602eac5.png" 
+                src="/lovable-uploads/logo.png" 
                 alt="Ankan" 
                 className="h-6" 
               />

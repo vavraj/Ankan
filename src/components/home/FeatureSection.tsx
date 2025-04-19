@@ -16,7 +16,7 @@ const FeatureSection = () => {
           <div className="flex flex-col items-center">
             <div className="mb-4 rounded-lg overflow-hidden">
               <img 
-                src="/lovable-uploads/dff63d9f-ca5a-4975-bd4a-7e05c1815e29.png" 
+                src="/lovable-uploads/fig1.png" 
                 alt="Explore Our Collection" 
                 className="w-full h-64 object-cover"
               />
@@ -29,7 +29,7 @@ const FeatureSection = () => {
           <div className="flex flex-col items-center">
             <div className="mb-4 rounded-lg overflow-hidden">
               <img 
-                src="/lovable-uploads/dcd8df0b-a773-4113-b4b8-492708052b76.png" 
+                src="/lovable-uploads/fig2.png" 
                 alt="Learn About Paitkar" 
                 className="w-full h-64 object-cover"
               />
@@ -42,7 +42,7 @@ const FeatureSection = () => {
           <div className="flex flex-col items-center">
             <div className="mb-4 rounded-lg overflow-hidden">
               <img 
-                src="/lovable-uploads/96f4a251-d153-4cde-a318-d5a6cf8e6f66.png" 
+                src="/lovable-uploads/fig3.png" 
                 alt="Customise your Art" 
                 className="w-full h-64 object-cover"
               />

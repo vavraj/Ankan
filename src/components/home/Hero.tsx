@@ -16,7 +16,7 @@ const Hero = () => {
         
         <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left">
           <img
-            src="/lovable-uploads/37000d57-adc7-438e-bae2-2514f602eac5.png"
+            src="/lovable-uploads/logo.png"
             alt="Ankan Logo"
             className="h-auto w-64 mb-4"
           />

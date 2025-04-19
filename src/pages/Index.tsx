@@ -12,7 +12,7 @@ const Index = () => {
       <FeatureSection />
       
       {/* Paitkar Introduction */}
-      <section className="py-16 px-6 bg-ankan-brown text-white">
+      {/* <section className="py-16 px-6 bg-ankan-brown text-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">THE PARABLE OF PAITKAR</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -38,10 +38,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Support Artisans */}
-      <section className="py-16 px-6 bg-ankan-beige">
+      {/* <section className="py-16 px-6 bg-ankan-beige">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-ankan-brown">SUPPORT THE ARTISANS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -74,7 +74,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Shop our Collection */}
       <section className="py-16 px-6 bg-white">
@@ -144,12 +144,12 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link to="/collections">
-              <Button className="bg-white text-ankan-brown hover:bg-gray-100 px-8 py-6 text-lg">
+              <Button variant="outline" className="bg-white text-ankan-brown hover:bg-gray-100 px-8 py-6 text-lg">
                 Shop Now
               </Button>
             </Link>
             <Link to="/support-artisan">
-              <Button variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+              <Button variant="outline" className="bg-white text-ankan-brown hover:bg-gray-100 px-8 py-6 text-lg">
                 Support an Artisan
               </Button>
             </Link>
