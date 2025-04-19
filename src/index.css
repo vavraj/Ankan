@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Montserrat+Alternates:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -82,11 +83,15 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 }
 
 @layer components {
+  .font-alternates {
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+  
   .ankan-btn {
     @apply px-5 py-2 rounded font-medium transition-colors;
   }

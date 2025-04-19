@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, User, Search, Menu, X } from 'lucide-react';
@@ -11,14 +10,6 @@ import {
   CommandGroup, 
   CommandItem 
 } from "@/components/ui/command";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { cn } from '@/lib/utils';
 
 const Navbar = () => {
@@ -80,49 +71,6 @@ const Navbar = () => {
               <Menu size={20} />
             </button>
           </div>
-        </div>
-      </div>
-      
-      {/* Navigation links - not shown on mobile */}
-      <div className="hidden md:block bg-[#e9e5df] py-3">
-        <div className="container mx-auto">
-          <nav className="flex justify-center">
-            <ul className="flex space-x-8">
-              <li>
-                <Link to="/collections" className="text-gray-800 hover:text-ankan-brown font-medium">
-                  SHOP
-                </Link>
-              </li>
-              <li className="relative group">
-                <button className="text-gray-800 hover:text-ankan-brown font-medium flex items-center">
-                  ABOUT
-                </button>
-                <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
-                  <Link to="/about-paitkar" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                    About Paitkar
-                  </Link>
-                  <Link to="/makers" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                    Our Artisans
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <Link to="/support-artisan" className="text-gray-800 hover:text-ankan-brown font-medium">
-                  SUPPORT ARTISAN
-                </Link>
-              </li>
-              <li>
-                <Link to="/workshops" className="text-gray-800 hover:text-ankan-brown font-medium">
-                  WORKSHOPS
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-800 hover:text-ankan-brown font-medium">
-                  CONTACT
-                </Link>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
       
