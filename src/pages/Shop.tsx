@@ -9,13 +9,13 @@ const Shop = () => {
       id: '1',
       title: 'Ethereal HER',
       price: 3800,
-      image: '/lovable-uploads/c4b4b02c-0dc6-499d-8732-f11ff546d9ea.png',
+      image: '/lovable-uploads/etheralher.png',
     },
     {
       id: '2',
       title: 'Mystic Woods',
       price: 2500,
-      image: '/lovable-uploads/2fdf3a0c-2776-44a8-9351-19d5645cb6fb.png',
+      image: '/lovable-uploads/mysticwoods.png',
     },
     {
       id: '3',
