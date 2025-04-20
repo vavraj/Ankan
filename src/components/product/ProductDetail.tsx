@@ -28,7 +28,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           />
         </div>
         <div className="text-center">
-          <button className="ankan-btn-secondary mt-4">VIRTUAL TRYON</button>
+          <button className="ankan-btn-secondary mt-4">{product.title}</button>
         </div>
       </div>
       
