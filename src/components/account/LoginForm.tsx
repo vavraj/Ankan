@@ -13,8 +13,8 @@ const LoginForm = () => {
           <span>CONTINUE WITH GOOGLE</span>
         </button>
         
-        <button className="w-full py-3 px-4 border rounded flex items-center justify-center gap-2">
-          <img src="/apple-logo.svg" alt="Apple" className="w-5 h-5" />
+        <button className="w-full py-3 px-4 border rounded flex items-center justify-center gap-1">
+          <img src="/apple-logo.png" alt="Apple" className="w-9 h-5" />
           <span>CONTINUE WITH APPLE</span>
         </button>
       </div>
