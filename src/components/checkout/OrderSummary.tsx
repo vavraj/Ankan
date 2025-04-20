@@ -1,128 +1,119 @@
-
 import React from 'react';
-import { Check, Plus } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+
+interface OrderItem {
+  id: string;
+  title: string;
+  price: number;
+  image: string;
+  quantity: number;
+  style: string;
+  color: string;
+}
 
 interface OrderSummaryProps {
   orderData: {
-    items: {
-      id: string;
-      title: string;
-      price: number;
-      image: string;
-      quantity: number;
-      style: string;
-      color: string;
-    }[];
+    items: OrderItem[];
     estimatedDelivery: string;
     shipping: number;
     subtotal: number;
     tax: number;
     total: number;
   };
+  isDetailsVisible: boolean;
+  toggleDetails: () => void;
   isConfirmation?: boolean;
 }
 
-const OrderSummary: React.FC<OrderSummaryProps> = ({ orderData, isConfirmation }) => {
-  const navigate = useNavigate();
-  
-  const handlePlaceOrder = () => {
-    // In a real app, you would submit the order to your backend here
-    // and then redirect to the confirmation page after successful submission
-    navigate('/order-confirmation');
-  };
+const OrderSummary: React.FC<OrderSummaryProps> = ({ 
+  orderData, 
+  isDetailsVisible, 
+  toggleDetails,
+  isConfirmation = false
+}) => {
+  const { items, estimatedDelivery, shipping, subtotal, tax, total } = orderData;
   
   return (
-    <div className="border rounded p-6 space-y-6">
-      <h2 className="text-xl text-center mb-6">1 Item</h2>
-      
-      {orderData.items.map((item) => (
-        <div key={item.id} className="pb-4 border-b">
-          <div className="flex gap-4">
-            <img 
-              src={item.image} 
-              alt={item.title} 
-              className="w-20 h-20 object-contain"
-            />
-            <div className="flex-1">
-              <h3 className="font-medium">{item.title}</h3>
-              <p className="text-sm text-gray-600">Style {item.style}</p>
-              <p className="text-sm text-gray-600">{item.color}</p>
-              <p className="mt-2">Estimated delivery on {orderData.estimatedDelivery}</p>
-            </div>
-            <div className="text-right">
-              <p>QTY: {item.quantity}</p>
-              <p className="mt-2">₹ {item.price}</p>
-            </div>
-          </div>
-        </div>
-      ))}
-      
-      <div className="space-y-2 pb-4 border-b">
-        <div className="flex justify-between">
-          <span>Subtotal</span>
-          <span>₹ {orderData.subtotal}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Shipping</span>
-          <span>{orderData.shipping === 0 ? '0 (DHL Express Worldwide)' : `₹ ${orderData.shipping}`}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Total</span>
-          <span>₹ {orderData.total}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>VAT (Included)</span>
-          <span>₹ {orderData.tax}</span>
-        </div>
-      </div>
-      
-      {!isConfirmation ? (
-        <div className="space-y-4">
-          <div className="flex items-start gap-2">
-            <input type="checkbox" id="terms" className="mt-1" />
-            <label htmlFor="terms" className="text-sm">
-              I agree to the current conditions of sale and I have read and understand the privacy policy.
-              <a href="#" className="block text-black hover:underline mt-1">Read more</a>
-            </label>
-          </div>
-          
-          <div className="flex items-start gap-2">
-            <div className="mt-1">
-              <Check size={16} className="text-black" />
-            </div>
-            <p className="text-sm">
-              I would like to receive updates about ankan new activities, exclusive product, tailored services and to have a personalized chat experience based on my interests.
-            </p>
-          </div>
-          
-          <button 
-            className="ankan-btn-primary w-full py-3 mt-4"
-            onClick={handlePlaceOrder}
+    <div className="bg-white border border-gray-200 rounded-md shadow-md sticky top-6">
+      <div className="p-6">
+        <h2 className="text-lg font-medium mb-4">
+          {isConfirmation ? 'Order Summary' : 'Cart Summary'}
+        </h2>
+        
+        <div className="border-b border-gray-200 pb-4 mb-4">
+          <button
+            className="flex items-center justify-between w-full text-left mb-3"
+            onClick={toggleDetails}
           >
-            Place Order
+            <span className="font-medium">
+              {items.length} {items.length === 1 ? 'item' : 'items'} in cart
+            </span>
+            {isDetailsVisible ? 
+              <ChevronUp size={18} className="text-gray-500" /> : 
+              <ChevronDown size={18} className="text-gray-500" />
+            }
           </button>
           
-          <div className="flex justify-between items-center pt-4 border-t">
-            <span>View Details</span>
-            <Plus size={16} />
-          </div>
+          {isDetailsVisible && (
+            <div className="space-y-4 mt-4">
+              {items.map(item => (
+                <div key={item.id} className="flex items-start">
+                  <div className="w-16 h-16 border border-gray-200 rounded-md overflow-hidden flex-shrink-0">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="ml-3 flex-1">
+                    <h3 className="text-sm font-medium">{item.title}</h3>
+                    <p className="text-xs text-gray-500 mt-1">Style: {item.style}</p>
+                    <p className="text-xs text-gray-500">Color: {item.color}</p>
+                    <div className="flex justify-between mt-1">
+                      <span className="text-xs text-gray-500">Qty: {item.quantity}</span>
+                      <span className="text-sm">₹ {item.price}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-      ) : (
-        <div className="text-center space-y-4">
-          <div className="bg-green-800 text-white w-16 h-16 mx-auto rounded-full flex items-center justify-center">
-            <Check size={32} />
+        
+        <div>
+          <div className="flex justify-between mb-2">
+            <span className="text-gray-600">Subtotal</span>
+            <span>₹ {subtotal}</span>
           </div>
-          <p className="font-medium text-lg">Your Order Has Been Placed</p>
-          <p className="text-gray-600">Order #AN78562394</p>
-          <p className="text-gray-600">Thank you for your purchase!</p>
+          <div className="flex justify-between mb-2">
+            <span className="text-gray-600">Shipping</span>
+            <span>{shipping === 0 ? 'Free' : `₹ ${shipping}`}</span>
+          </div>
+          <div className="flex justify-between mb-2">
+            <span className="text-gray-600">Tax</span>
+            <span>₹ {tax}</span>
+          </div>
+          {isDetailsVisible && (
+            <div className="text-sm text-gray-500 mt-2 mb-4">
+              <p>Estimated delivery: {estimatedDelivery}</p>
+            </div>
+          )}
+        </div>
+        
+        <div className="border-t border-gray-200 pt-4 mt-4">
+          <div className="flex justify-between font-medium text-lg">
+            <span>Total</span>
+            <span>₹ {total}</span>
+          </div>
           
-          <div className="flex justify-between items-center pt-4 border-t">
-            <span>View Details</span>
-            <Plus size={16} />
-          </div>
+          {isConfirmation && (
+            <div className="mt-4 pt-4 border-t text-sm text-gray-600">
+              <p className="mb-2">Your order has been confirmed and will be shipped soon.</p>
+              <p>Order #AN78562394</p>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CheckoutSteps from '@/components/checkout/CheckoutSteps';
 import OrderSummary from '@/components/checkout/OrderSummary';
@@ -7,10 +6,17 @@ import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
 const OrderConfirmation = () => {
+  const [isDetailsVisible, setIsDetailsVisible] = useState(true);
+  
+  const toggleDetails = () => {
+    setIsDetailsVisible(prev => !prev);
+  };
+
   const steps = [
     { number: 1, title: 'Shipping Address' },
     { number: 2, title: 'Gifting' },
     { number: 3, title: 'Payment' },
+    { number: 4, title: 'Confirmation' }
   ];
   
   const orderData = {
@@ -19,7 +25,7 @@ const OrderConfirmation = () => {
         id: '6',
         title: 'Krishna and Gopiyan',
         price: 3000,
-        image: '/lovable-uploads/c792593b-eafa-4374-b050-ca9e82ad1c03.png',
+        image: '/lovable-uploads/krishna.png',
         quantity: 1,
         style: 'B26157 SG01.102',
         color: 'Mud and greens',
@@ -29,13 +35,15 @@ const OrderConfirmation = () => {
     shipping: 0,
     subtotal: 3000,
     tax: 153,
-    total: 3000,
+    total: 3153,
   };
   
   return (
     <div className="bg-ankan-beige min-h-screen py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
+          
+          {/* Confirmation Message */}
           <div className="bg-white p-8 rounded-md shadow-md mb-8 text-center">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Check className="w-8 h-8 text-green-600" />
@@ -59,7 +67,8 @@ const OrderConfirmation = () => {
               </Link>
             </div>
           </div>
-          
+
+          {/* Order Details Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
               <div className="bg-white p-6 rounded-md shadow-md mb-8">
@@ -90,7 +99,7 @@ const OrderConfirmation = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="pt-4 border-t">
                   <h3 className="font-medium mb-4">Order Items</h3>
                   {orderData.items.map(item => (
@@ -113,12 +122,19 @@ const OrderConfirmation = () => {
                   ))}
                 </div>
               </div>
-              
-              <CheckoutSteps currentStep={3} steps={steps} />
+
+              {/* Connect final step properly */}
+              <CheckoutSteps currentStep={4} steps={steps} />
             </div>
-            
+
+            {/* Order Summary Card */}
             <div>
-              <OrderSummary orderData={orderData} isConfirmation={true} />
+              <OrderSummary 
+                orderData={orderData} 
+                isDetailsVisible={isDetailsVisible}
+                toggleDetails={toggleDetails}
+                isConfirmation={true} 
+              />
             </div>
           </div>
         </div>
