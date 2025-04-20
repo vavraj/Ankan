@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const FeatureSection = () => {
   return (
-    <div className="bg-ankan-beige py-16">
+    <div className="bg-[#D6D4CD] py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-medium mb-2">Welcome to <span className="font-bold">अंकन</span></h2>
+          <h2 className="text-3xl font-semibold mb-2">Welcome to <span className="font-bold">अंकन</span></h2>
           <p className="text-gray-700">Where Heritage Meets Artistry,</p>
           <p className="text-gray-700">One Scroll at a Time.</p>
         </div>
@@ -18,10 +18,10 @@ const FeatureSection = () => {
               <img 
                 src="/lovable-uploads/fig1.png" 
                 alt="Explore Our Collection" 
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover rounded-3xl"
               />
             </div>
-            <Link to="/collections" className="px-6 py-2 bg-white border border-gray-300 rounded-md text-gray-800 hover:bg-gray-100 transition-colors">
+            <Link to="/collections" className="px-6 py-2 bg-[#D9D9D9] border-2 border-[#58504D]/70 rounded-lg text-gray-800 hover:bg-gray-100 transition-colors">
               Explore Our Collection
             </Link>
           </div>
@@ -31,10 +31,10 @@ const FeatureSection = () => {
               <img 
                 src="/lovable-uploads/fig2.png" 
                 alt="Learn About Paitkar" 
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover rounded-3xl"
               />
             </div>
-            <Link to="/about-paitkar" className="px-6 py-2 bg-white border border-gray-300 rounded-md text-gray-800 hover:bg-gray-100 transition-colors">
+            <Link to="/about-paitkar" className="px-6 py-2 bg-[#D9D9D9] border-2 border-[#58504D]/70 rounded-lg text-gray-800 hover:bg-gray-100 transition-colors">
               Learn About Paitkar
             </Link>
           </div>
@@ -44,10 +44,10 @@ const FeatureSection = () => {
               <img 
                 src="/lovable-uploads/fig3.png" 
                 alt="Customise your Art" 
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover rounded-3xl"
               />
             </div>
-            <Link to="/customise" className="px-6 py-2 bg-white border border-gray-300 rounded-md text-gray-800 hover:bg-gray-100 transition-colors">
+            <Link to="/customise" className="px-6 py-2 bg-[#D9D9D9] border-2 border-[#58504D]/70 rounded-lg text-gray-800 hover:bg-gray-100 transition-colors">
               Customise your Art
             </Link>
           </div>

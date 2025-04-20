@@ -77,7 +77,7 @@ const Index = () => {
       </section> */}
       
       {/* Shop our Collection */}
-      <section className="py-16 px-6 bg-white">
+      {/* <section className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">SHOP OUR COLLECTION</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -133,10 +133,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Call to Action */}
-      <section className="py-24 px-6 bg-ankan-brown text-white text-center">
+      {/* <section className="py-24 px-6 bg-ankan-brown text-white text-center">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Support Artisans, Preserve Tradition</h2>
           <p className="text-xl mb-12 max-w-3xl mx-auto">
@@ -155,7 +155,7 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
