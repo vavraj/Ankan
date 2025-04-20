@@ -27,10 +27,10 @@ const Navbar = () => {
   return (
     <header>
       {/* Top navbar with icons */}
-      <div className="bg-[#635651] text-white py-3">
-        <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="min-w-full bg-[#635651] text-white py-3 z-50">
+        <div className="container flex items-center justify-between">
           <div>
-            <Link to="/" className="ml-2">
+            <Link to="/" className="">
               <img 
                 src="/lovable-uploads/logo2.png" 
                 alt="Ankan Small Logo" 
@@ -42,7 +42,7 @@ const Navbar = () => {
           <div className="flex-1 flex justify-center">
             <Link to="/">
               <img 
-                src="/lovable-uploads/logo.png" 
+                src="/ankanwhite.png" 
                 alt="Ankan" 
                 className="h-6" 
               />

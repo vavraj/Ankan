@@ -29,7 +29,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex m-0 p-0 flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow">
             <Routes>

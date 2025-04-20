@@ -75,9 +75,9 @@ const Footer = () => {
         <div className="mt-12 flex justify-center">
           <Link to="/">
             <img 
-              src="../lovable-uploads/logo.png" 
+              src="../ankanwhite.png" 
               alt="Ankan" 
-              className="h-8 filter invert" 
+              className="h-20 filter" 
             />
           </Link>
         </div>
