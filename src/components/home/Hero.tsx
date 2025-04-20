@@ -24,7 +24,7 @@ const Hero = () => {
           
           <div className="min-w-full flex flex-wrap justify-center gap-4">
             <Link to="/collections" className="px-8 py-3 bg-[#D6D4CD] border-2 border-[#58504D] rounded-xl text-gray-800 hover:bg-gray-200 transition-colors text-sm">Shop</Link>
-            <Link to="/about" className="px-8 py-3 bg-[#58504D] text-white rounded-xl hover:bg-ankan-darkBrown transition-colors text-sm">Adopt</Link>
+            <Link to="/support-artisan" className="px-8 py-3 bg-[#58504D] text-white rounded-xl hover:bg-ankan-darkBrown transition-colors text-sm">Adopt</Link>
           </div>
         </div>
       </div>

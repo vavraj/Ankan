@@ -109,20 +109,23 @@
 
 import React, { useState } from 'react';
 
-interface ProductDetailProps {
-  product: {
-    id: string;
-    title: string;
-    price: number;
-    image: string;
-    thumbnail: string;
-    details: {
-      style: string;
-      description: string;
-      features: string[];
-    };
-  };
+interface Product {
+  id: string;
+  title: string;
+  price: number;
+  image: string;
+  details: ProductDetails;
 }
+interface ProductDetailProps {
+  product: Product;
+}
+interface ProductDetails {
+  style: string;
+  description: string;
+  features: string[];
+}
+
+
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   const [isAdded, setIsAdded] = useState(false);
@@ -227,7 +230,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             <div className="flex justify-between items-center">
               <p><strong>Style {product.details.style}</strong></p>
               <img 
-                src={product.thumbnail || product.image} 
+                src={product.image} 
                 alt={product.title} 
                 className="w-20 h-20 object-cover rounded-lg shadow-sm"
               />
