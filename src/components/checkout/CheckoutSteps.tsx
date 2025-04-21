@@ -82,7 +82,7 @@ const CheckoutSteps: React.FC<CheckoutStepsProps> = ({ steps, currentStep }) => 
             <div 
               key={step.number}
               className={`flex flex-col items-center relative z-10 ${
-                index === steps.length - 0 ? '' : 'flex-1'
+                index === steps.length ? '' : 'flex-1'
               }`}
             >
               <div 
@@ -104,11 +104,16 @@ const CheckoutSteps: React.FC<CheckoutStepsProps> = ({ steps, currentStep }) => 
               
               {index < steps.length - 1 && (
                 <div 
-                  className={`absolute top-4 left-0 right-0 h-0.5 -z-10 mx-8 ${
-                    currentStep > step.number + 1 ? 'bg-gray-800' : 'bg-gray-200'
-                  }`}
-                  style={{ width: 'calc(100% - 2rem)', left: '50%' }}
-                ></div>
+                className={`absolute top-4 -z-10 ${
+                  currentStep > step.number + 1 ? 'bg-gray-800' : 'bg-gray-200'
+                }`}
+                style={{ 
+                  height: '2px',
+                  width: '100%', 
+                  left: '50%',
+                  right: '-50%'
+                }}
+              ></div>
               )}
             </div>
           );
