@@ -192,11 +192,11 @@ const Artisans = () => {
           <div className="max-w-4xl mx-auto" >
             {artisans.map((artisan, index) => (
               <div key={index} className="mb-16">
-                <div className={`flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="w-full md:w-1/2 bg-gray-200 h-64 md:h-auto">
+                <div className={`flex flex-col md:flex-row ${index % 2 !== 1 ? 'md:flex-row-reverse bg-[#d6d4cd] text-[#58504D]' : ''}`}>
+                  <div className="w-full md:w-1/2 h-64 md:h-auto">
                   <img src={artisan.image2} alt={artisan.name} />
                   </div>
-                  <div className="w-full md:w-1/2 p-8 bg-gray-800">
+                  <div className="w-full md:w-1/2 p-8">
                     <h3 className="text-xl font-bold mb-4">{artisan.name}</h3>
                     <p>{artisan.description}</p>
                   </div>
@@ -208,7 +208,7 @@ const Artisans = () => {
       </div>
 
       {/* Stay Connected */}
-      <div className="bg-gray-800 py-16">
+      <div className="bg-[#d6d4cd] text-[#58504D] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-6">STAY CONNECTED</h2>
           <p className="mb-8">Follow us on our social media accounts to get even more fragrant content</p>
