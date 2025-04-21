@@ -192,7 +192,7 @@ const Artisans = () => {
           <div className="max-w-4xl mx-auto" >
             {artisans.map((artisan, index) => (
               <div key={index} className="mb-16">
-                <div className={`flex flex-col md:flex-row ${index % 2 !== 1 ? 'md:flex-row-reverse bg-[#d6d4cd] text-[#58504D]' : ''}`}>
+                <div className={`flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse ' : 'bg-[#d6d4cd] text-[#58504D]'}`}>
                   <div className="w-full md:w-1/2 h-64 md:h-auto">
                   <img src={artisan.image2} alt={artisan.name} />
                   </div>
