@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <header>
       {/* Top navbar with icons */}
-      <div className="min-w-full bg-[#635651] text-white py-3 z-50">
+      <div className="min-w-full bg-[#58504D] text-white py-3 z-50">
         <div className="container flex items-center justify-between">
           <div>
             <Link to="/" className="">

@@ -57,7 +57,7 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         ankan: {
-          brown: "#635651",
+          brown: "#58504D",
           beige: "#e9e5df",
           lightBeige: "#f5f3ef",
           darkBrown: "#4c423e",
