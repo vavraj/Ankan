@@ -49,7 +49,7 @@ const OrderConfirmation = () => {
               {/* <Check className="w-8 h-8 text-green-600" /> */}
               <img src="/lovable-uploads/shoppingCart.png" alt="" />
             </div>
-            <h1 className="text-2xl font-bold mb-2">ORDER PLACED SUCCESSFULLYY</h1>
+            <h1 className="text-2xl font-bold mb-2">ORDER PLACED SUCCESSFULLY</h1>
             <p className="text-gray-600 mb-4">Order #AN78562394 | john2023752@gmail.com</p>
             <p className="mb-6">
               Thank you for your order! We're getting everything ready and will notify you when it ships.
