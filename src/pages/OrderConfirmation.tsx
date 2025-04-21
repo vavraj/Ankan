@@ -124,7 +124,7 @@ const OrderConfirmation = () => {
               </div>
 
               {/* Connect final step properly */}
-              <CheckoutSteps currentStep={4} steps={steps} />
+              <CheckoutSteps currentStep={5} steps={steps} />
             </div>
 
             {/* Order Summary Card */}

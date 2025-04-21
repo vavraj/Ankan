@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
-
+import { ChevronLeft, ChevronRight, Check, Contrast } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 const CustomizePage = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [name, setName] = useState('');
@@ -21,7 +21,7 @@ const CustomizePage = () => {
     { number: 2, label: "Green", color: "#6B8E23" },
     { number: 3, label: "Yellow", color: "#B6862C" },
     { number: 4, label: "Dark Brown", color: "#5D4037" },
-    { number: 5, label: "Black", color: "#212121" },
+    // { number: 5, label: "Black", color: "#212121" },
   ];
 
   const handlePrevImage = () => {
@@ -37,7 +37,7 @@ const CustomizePage = () => {
     newColors[index] = color;
     setSelectedColors(newColors);
   };
-
+  const navigate = useNavigate();
   return (
     <div
       className="min-h-screen text-white py-16"
@@ -47,6 +47,7 @@ const CustomizePage = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
+        // filter:'brightness(0.8)',
         backgroundBlendMode: 'multiply',
       }}
     >
@@ -62,6 +63,7 @@ const CustomizePage = () => {
               <img
                 src={images[currentImage]}
                 alt="Paitkar Art"
+                style={{filter:'contrast(0.8'}}
                 className="w-full h-full object-cover"
               />
               
@@ -158,6 +160,7 @@ const CustomizePage = () => {
             <Button 
               className="w-full py-6 bg-black hover:bg-black/80 text-white text-lg font-medium tracking-wider shadow-lg transition-transform hover:translate-y-[-2px]"
               size="lg"
+              onClick={() => navigate('/checkout')}
             >
               PROCEED TO PAYMENT
             </Button>

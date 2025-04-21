@@ -82,7 +82,7 @@ const CheckoutSteps: React.FC<CheckoutStepsProps> = ({ steps, currentStep }) => 
             <div 
               key={step.number}
               className={`flex flex-col items-center relative z-10 ${
-                index === steps.length - 1 ? '' : 'flex-1'
+                index === steps.length - 0 ? '' : 'flex-1'
               }`}
             >
               <div 
