@@ -45,10 +45,11 @@ const OrderConfirmation = () => {
           
           {/* Confirmation Message */}
           <div className="bg-white p-8 rounded-md shadow-md mb-8 text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Check className="w-8 h-8 text-green-600" />
+            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              {/* <Check className="w-8 h-8 text-green-600" /> */}
+              <img src="/lovable-uploads/shoppingCart.png" alt="" />
             </div>
-            <h1 className="text-2xl font-bold mb-2">ORDER PLACED SUCCESSFULLY</h1>
+            <h1 className="text-2xl font-bold mb-2">ORDER PLACED SUCCESSFULLYY</h1>
             <p className="text-gray-600 mb-4">Order #AN78562394 | john2023752@gmail.com</p>
             <p className="mb-6">
               Thank you for your order! We're getting everything ready and will notify you when it ships.
