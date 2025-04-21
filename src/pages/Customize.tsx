@@ -12,9 +12,9 @@ const CustomizePage = () => {
   const [selectedColors, setSelectedColors] = useState<string[]>(['', '', '', '', '']);
 
   const images = [
-    '/lovable-uploads/bbe58c06-6025-42ad-ae69-aeb3c9204ef5.png',
-    '/lovable-uploads/2d2f41a7-c069-4a72-bf19-b72750bf310d.png',
-    '/lovable-uploads/18e8ded4-86e7-4d81-a07a-a0ef73cf0ecc.png'
+    '/lovable-uploads/customize2.png',
+    '/lovable-uploads/backgrounds/bg1.png',
+    '/lovable-uploads/fig1.png'
   ];
 
   const handlePrevImage = () => {
@@ -32,7 +32,19 @@ const CustomizePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#58504D] text-white pb-16">
+    <div
+  className="min-h-screen text-white pb-16"
+  style={{
+    backgroundColor: '#58504D',
+    backgroundImage: 'url(/lovable-uploads/backgrounds/customizebg.png)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    opacity:.95,
+    zIndex:0
+  }}
+>
+
       <div className="container mx-auto px-4 pt-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">CUSTOMISE YOUR ART</h1>
