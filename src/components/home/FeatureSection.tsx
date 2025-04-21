@@ -47,7 +47,7 @@ const FeatureSection = () => {
                 className="w-full h-64 object-cover rounded-3xl"
               />
             </div>
-            <Link to="/customise" className="px-6 py-2 bg-[#D9D9D9] border-2 border-[#58504D]/70 rounded-lg text-gray-800 hover:bg-gray-100 transition-colors">
+            <Link to="/customize" className="px-6 py-2 bg-[#D9D9D9] border-2 border-[#58504D]/70 rounded-lg text-gray-800 hover:bg-gray-100 transition-colors">
               Customise your Art
             </Link>
           </div>

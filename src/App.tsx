@@ -20,6 +20,7 @@ import AboutPaitkar from "./pages/AboutPaitkar";
 import Artisans from "./pages/Artisans";
 import Contact from "./pages/Contact";
 import SupportArtisan from "./pages/SupportArtisan";
+import Customize from "./pages/Customize";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/support-artisan/:id" element={<SupportArtisan />} />
               <Route path="/support-artisan" element={<SupportArtisan />} />
+              <Route path="/customize" element={<Customize />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
