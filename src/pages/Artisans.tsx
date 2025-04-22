@@ -230,9 +230,9 @@ const Artisans = () => {
 
             {/* Moni */}
             <div className="mb-16">
-              <div className="flex flex-col md:flex-row-reverse">
-                <div className="w-full h-80 md:h-auto">
-                  <img src="/lovable-uploads/moni2.png" alt="MONI" />
+              <div className="flex flex-col md:flex-row-reverse h-[373px]">
+                <div className="w-full h-80 md:h-auto -translate-y-44 ">
+                  <img src="/lovable-uploads/moni2.png" alt="MONI"/>
                 </div>
                 <div className="w-full md:w-1/2 p-8">
                   <h3 className="text-xl font-bold mb-4">MONI</h3>
@@ -243,8 +243,8 @@ const Artisans = () => {
 
             {/* Kishore Gayan */}
             <div className="mb-16">
-              <div className="flex flex-col md:flex-row bg-[#d6d4cd] text-[#58504D]">
-                <div className="w-full h-80 md:h-auto">
+              <div className="flex flex-col md:flex-row bg-[#d6d4cd] text-[#58504D] h-[497px]">
+                <div className="w-full h-80 md:h-auto -translate-y-40">
                   <img src="/lovable-uploads/kishore2.png" alt="KISHORE GAYAN" />
                 </div>
                 <div className="w-full md:w-1/2 p-8">
@@ -257,7 +257,7 @@ const Artisans = () => {
             {/* Poornima Gopey */}
             <div className="mb-16">
               <div className="flex flex-col items-end md:flex-row-reverse">
-                <div className="w-full h-[500px]">
+                <div className="w-full h-[300px] -translate-y-60">
                   <img src="/lovable-uploads/poornima2.png" alt="POORNIMA GOPEY" className='h-[600px]'/>
                 </div>
                 <div className="w-full md:w-1/2 p-8">
