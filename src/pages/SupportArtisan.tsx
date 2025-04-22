@@ -9,7 +9,6 @@ const SupportArtisan = () => {
   const [showCustomAmount, setShowCustomAmount] = useState(false);
   const [selectedOption, setSelectedOption] = useState('1000');
   
-  // This would normally be fetched from a database
   const artisan = {
     id: id || 'art-001',
     name: 'Kishore Gayan',
@@ -25,7 +24,6 @@ const SupportArtisan = () => {
   
   return (
     <div className="bg-ankan-beige min-h-screen">
-      {/* Hero Section with Parallax Effect */}
       <motion.div 
         className="h-80 bg-cover bg-center relative opacity-80" 
         style={{ backgroundImage: `url(/lovable-uploads/backgrounds/bg2.png)` }}
@@ -55,14 +53,12 @@ const SupportArtisan = () => {
       
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          {/* Artist info section - Horizontal alignment of image and text */}
           <motion.div 
             className="flex flex-col md:flex-row items-center mb-12 gap-8"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Artisan Image - Keeping circular shape but same size */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -77,7 +73,6 @@ const SupportArtisan = () => {
               />
             </motion.div>
             
-            {/* Artisan Info */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -111,7 +106,6 @@ const SupportArtisan = () => {
             </motion.div>
           </motion.div>
           
-          {/* Support Options - Now positioned below both image and description */}
           <motion.div 
             className="bg-white p-6 rounded-md shadow-md mb-8"
             initial={{ y: 20, opacity: 0 }}
@@ -121,7 +115,6 @@ const SupportArtisan = () => {
           >
             <h3 className="text-xl font-medium mb-4">Support Options</h3>
             <div className="space-y-4">
-              {/* Radio options with improved styling */}
               <motion.div 
                 className="flex items-center p-3 rounded-md hover:bg-ankan-beige/50 transition-colors duration-300"
                 whileHover={{ x: 5 }}
@@ -191,7 +184,6 @@ const SupportArtisan = () => {
                 </label>
               </motion.div>
               
-              {/* Animated custom amount input */}
               <motion.div 
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ 
@@ -210,14 +202,13 @@ const SupportArtisan = () => {
             </div>
           </motion.div>
           
-          {/* Buttons section */}
           <motion.div 
             className="flex gap-4 mb-12 justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
           >
-            <Link to="/checkout?type=support">
+            <Link to="/donation-success">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
                   className="bg-ankan-brown hover:bg-ankan-brown/90 text-white px-6 py-2 rounded-md transition-all shadow-md hover:shadow-lg"
@@ -239,7 +230,6 @@ const SupportArtisan = () => {
             </Link>
           </motion.div>
           
-          {/* How Your Support Helps Section */}
           <motion.div 
             className="bg-white p-8 rounded-md shadow-md mb-12"
             initial={{ y: 50, opacity: 0 }}
@@ -249,7 +239,6 @@ const SupportArtisan = () => {
           >
             <h3 className="text-2xl font-medium mb-6 text-center">How Your Support Helps</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Support Point 1 */}
               <motion.div 
                 className="text-center"
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
@@ -267,7 +256,6 @@ const SupportArtisan = () => {
                 </p>
               </motion.div>
               
-              {/* Support Point 2 */}
               <motion.div 
                 className="text-center"
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
@@ -286,7 +274,6 @@ const SupportArtisan = () => {
                 </p>
               </motion.div>
               
-              {/* Support Point 3 */}
               <motion.div 
                 className="text-center"
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
@@ -307,7 +294,6 @@ const SupportArtisan = () => {
             </div>
           </motion.div>
           
-          {/* Call to Action */}
           <motion.div 
             className="bg-ankan-brown text-white p-8 rounded-md text-center"
             initial={{ y: 30, opacity: 0 }}
