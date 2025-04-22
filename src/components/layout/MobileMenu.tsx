@@ -33,6 +33,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
           <h2 className="text-3xl font-medium mt-6 mb-4">ACCOUNT</h2>
           <Link to="/account" className="text-xl" onClick={onClose}>MY ACCOUNT</Link>
           <Link to="/cart" className="text-xl" onClick={onClose}>CART</Link>
+          <Link to="/rewards" className="text-xl" onClick={onClose}>MY REWARDS</Link>
           <Link to="/contact" className="text-xl" onClick={onClose}>CONTACT US</Link>
         </nav>
       </div>
