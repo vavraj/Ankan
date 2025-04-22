@@ -166,7 +166,7 @@ const WorkshopInfo: React.FC<WorkshopInfoProps> = ({ onBookWorkshop }) => {
             whileHover={{ y: -5 }}
           >
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-medium mb-4 inline-block border-2 border-ankan-brown rounded-full w-12 h-12 flex items-center justify-center">01</span>
+              <span className="text-2xl font-medium mb-4 border-2 border-ankan-brown rounded-full w-12 h-12 flex items-center justify-center">01</span>
               <h3 className="text-xl font-medium mb-6 text-center">BOOK A SLOT</h3>
               <p className="text-gray-600 text-center">
                 Look at the upcoming workshops and book a slot most favourable for you
@@ -183,7 +183,7 @@ const WorkshopInfo: React.FC<WorkshopInfoProps> = ({ onBookWorkshop }) => {
             whileHover={{ y: -5 }}
           >
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-medium mb-4 inline-block border-2 border-ankan-brown rounded-full w-12 h-12 flex items-center justify-center">02</span>
+              <span className="text-2xl font-medium mb-4 border-2 border-ankan-brown rounded-full w-12 h-12 flex items-center justify-center">02</span>
               <h3 className="text-xl font-medium mb-6 text-center">MAKE PAYMENT</h3>
               <p className="text-gray-600 text-center">
                 Make your payment to secure your seat and let us get on to assembling your own little Paitkar kit
