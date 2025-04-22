@@ -1,4 +1,3 @@
-
 // import React from 'react';
 import ArtisanProfile from '@/components/about/ArtisanProfile';
 
@@ -173,11 +172,11 @@ const Artisans = () => {
 
 
       {/* Meet The Makers */}
-      <div className="bg-gray-700 py-16" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
-        <div className="container mx-auto px-4" >
+      <div className="bg-gray-700 mx-0 px-0 py-16" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
+        <div className="container mx-0 px-0" >
           <h2 className="text-3xl font-bold text-center mb-16">MEET THE MAKERS</h2>
           
-          <div className="flex flex-wrap justify-center gap-8 mb-16">
+          <div className="flex flex-wrap justify-between gap-8 mb-16 p-10">
             {artisans.map((artisan, index) => (
               <div key={index} className="w-40 flex flex-col items-center">
                 <div className="w-40 h-40 rounded-full overflow-hidden" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
@@ -189,20 +188,84 @@ const Artisans = () => {
           </div>
           
           {/* Artisan Profiles */}
-          <div className="max-w-4xl mx-auto" >
-            {artisans.map((artisan, index) => (
-              <div key={index} className="mb-16">
-                <div className={`flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse ' : 'bg-[#d6d4cd] text-[#58504D]'}`}>
-                  <div className="w-full md:w-1/2 h-64 md:h-auto">
-                  <img src={artisan.image2} alt={artisan.name} />
-                  </div>
-                  <div className="w-full md:w-1/2 p-8">
-                    <h3 className="text-xl font-bold mb-4">{artisan.name}</h3>
-                    <p>{artisan.description}</p>
-                  </div>
+          <div className="" >
+            {/* Anil Chitrakar */}
+            <div className="mb-16">
+              <div className="flex flex-col items-center md:flex-row bg-[#d6d4cd] text-[#58504D]">
+                <div className="w-1/2 h-80 md:h-auto">
+                  <img src="/lovable-uploads/anil2.png" alt="ANIL CHITRAKAR" />
+                </div>
+                <div className="w-full md:w-1/2">
+                  <h3 className="text-xl font-bold mb-4">ANIL CHITRAKAR</h3>
+                  <p>Amadobi has many Paitkar artists and at 71, Anil Chitrakar is the oldest painter in the village. " In each of my paintings, there is a song. And we sing that song," explains Anil. Showing us a scroll painting of Karma dance at a major Santhali festival he adds, "Once a story comes to mind, we paint it. The most important thing is to write the song, then make a painting, and finally sing it to people."</p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Anjana Patekar */}
+            <div className="h-[430px] px-10">
+              <div className="flex flex-col md:flex-row-reverse">
+                <div className="w-full h-80 md:h-auto -translate-y-40">
+                  <img src="/lovable-uploads/anjana2.png" alt="ANJANA PATEKAR" />
+                </div>
+                <div className="w-full md:w-1/2 h-64">
+                  <h3 className="text-xl font-bold mb-4">ANJANA PATEKAR</h3>
+                  <p>A resilient housewife and dedicated Paitkar artist who has been working in the art form since childhood. Despite frequent conflicts and lack of support from her husband, she remains unwavering in her passion for painting. Growing up in a family of Paitkar artists, she honed her skills from a young age, and her deeprooted love for the craft has fueled her perseverance. Balancing household responsibilities with her artistic pursuits, she continues to create beautiful and emotive scroll paintings, contributing to the preservation of Paitkar art and inspiring other women facing similar challenges.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Vijay Chitrakar */}
+            <div className="mb-16">
+              <div className="flex flex-col md:flex-row bg-[#d6d4cd] text-[#58504D] h-[530px]">
+                <div className="w-full h-80 md:h-auto -translate-y-20">
+                  <img src="/lovable-uploads/vijay2.png" alt="VIJAY CHITRAKAR" />
+                </div>
+                <div className="w-full md:w-1/2 p-8">
+                  <h3 className="text-xl font-bold mb-4">VIJAY CHITRAKAR</h3>
+                  <p>Vijay, 41, lives in Amadobi village in Purbi Singhbhum district of Jharkhand. He says Paitkar paintings are based on local Santhali stories, rural lifestyles, nature and mythology. "Our main theme is rural culture; the things we see around us, we depict in our art," says Vijay who has been making Paitkar paintings since he was 10 years old. "Karma dance, Baha dance, or a painting of the Ramayana, Mahabharata, a village scene..." He spells out the different parts to a Santhali painting, "It shows women doing household chores, men in the fields with bullocks, and birds in the sky."</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Moni */}
+            <div className="mb-16">
+              <div className="flex flex-col md:flex-row-reverse">
+                <div className="w-full h-80 md:h-auto">
+                  <img src="/lovable-uploads/moni2.png" alt="MONI" />
+                </div>
+                <div className="w-full md:w-1/2 p-8">
+                  <h3 className="text-xl font-bold mb-4">MONI</h3>
+                  <p>A dedicated housewife and talented Paitkar artist, has deep roots in the world of Paitkar painting, coming from a family of skilled artisans. Her journey began as a child, learning the craft from her family before receiving formal training at Kalamandir. Although she does not have an artisan card, her passion for the art form is evident in her intricate and emotive scroll paintings. Alongside her husband, who is also a Paitkar painter, she continues to contribute to the legacy of Paitkar art, balancing her household responsibilities with her artistic pursuits.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Kishore Gayan */}
+            <div className="mb-16">
+              <div className="flex flex-col md:flex-row bg-[#d6d4cd] text-[#58504D]">
+                <div className="w-full h-80 md:h-auto">
+                  <img src="/lovable-uploads/kishore2.png" alt="KISHORE GAYAN" />
+                </div>
+                <div className="w-full md:w-1/2 p-8">
+                  <h3 className="text-xl font-bold mb-4">KISHORE GAYAN</h3>
+                  <p>Kishore Gayan is a renowned Paitkar artist celebrated for his exceptional skill and innovative interpretations of this traditional art form. With a deep connection to his cultural heritage, Gayans vibrant and intricate scroll paintings have been showcased in numerous national and international exhibitions, earning him widespread acclaim. His work brings ancient folklore and mythological stories to life, captivating audiences with their rich narratives and vivid colors. Gayans contributions have significantly promoted and preserved Paitkar art, establishing him as a leading figure and inspiring a new generation of artists.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Poornima Gopey */}
+            <div className="mb-16">
+              <div className="flex flex-col items-end md:flex-row-reverse">
+                <div className="w-full h-[500px]">
+                  <img src="/lovable-uploads/poornima2.png" alt="POORNIMA GOPEY" className='h-[600px]'/>
+                </div>
+                <div className="w-full md:w-1/2 p-8">
+                  <h3 className="text-xl font-bold mb-4">POORNIMA GOPEY</h3>
+                  <p>A 22-year-old Paitkar artist, has spent a year honing their craft at Kalamandir and now boasts one year of professional experience. Their work vividly captures the essence of traditional Paitkar art, drawing inspiration from Santhal folklore and mythology. With a keen eye for detail and a passion for preserving this ancient art form, has begun to make a name for themselves, showcasing their vibrant scroll paintings at local exhibitions and cultural festivals.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

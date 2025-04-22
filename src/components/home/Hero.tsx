@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <div className="bg-ankan-beige min-h-[550px] min-w-full">
-      <div className="relative flex justify-between h-[550px] min-w-full m-0 p-0">
+      <div className="relative flex gap-20 h-[650px] min-w-full m-0 p-0">
         <div className="z-0 overflow-clip items-center mb-8 md:mb-0 m-0 p-0">
           <img
             src="/hero.png"
             alt="Paitkar Art"
-            className="w-[600px] -translate-y-10 -translate-x-20 bg-[#D6D4CD] rounded-full"
+            className="w-[800px] -translate-y-10 -translate-x-20 bg-[#D6D4CD] rounded-full"
           />
         </div>
         
-        <div className="flex flex-col justify-center items-center md:items-start text-center md:mr-20 md:text-left">
+        <div className="flex flex-col justify-center items-start md:items-start text-center md:mr-20 md:text-left">
           <img
             src="/ankan.png"
             alt="Ankan Logo"

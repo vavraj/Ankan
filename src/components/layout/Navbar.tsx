@@ -25,16 +25,16 @@ const Navbar = () => {
   ];
 
   return (
-    <header>
-      {/* Top navbar with icons */}
-      <div className="min-w-full bg-[#58504D] text-white py-3 z-50">
+    <header className='bg-[#58504D] p-2'>
+      <div className='bg-[#69615F] rounded-lg'>
+      <div className="min-w-full  text-white py-3 z-50">
         <div className="container flex items-center justify-between">
           <div>
             <Link to="/" className="">
               <img 
                 src="/lovable-uploads/logo2.png" 
                 alt="Ankan Small Logo" 
-                className="w-6 h-6" 
+                className="w-8 h-8" 
               />
             </Link>
           </div>
@@ -44,31 +44,31 @@ const Navbar = () => {
               <img 
                 src="/ankanwhite.png" 
                 alt="Ankan" 
-                className="h-6" 
+                className="h-8" 
               />
             </Link>
           </div>
           
           <div className="flex items-center gap-6">
             <Link to="/cart" className="hover:text-gray-200">
-              <ShoppingCart size={20} />
+              <ShoppingCart size={24} />
             </Link>
             <Link to="/account" className="hover:text-gray-200">
-              <User size={20} />
+              <User size={24} />
             </Link>
             <button 
               className="hover:text-gray-200"
               onClick={() => setSearchOpen(true)}
               aria-label="Search"
             >
-              <Search size={20} />
+              <Search size={24} />
             </button>
             <button 
               className="hover:text-gray-200"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Menu"
             >
-              <Menu size={20} />
+              <Menu size={24} />
             </button>
           </div>
         </div>
@@ -98,6 +98,8 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <MobileMenu onClose={() => setMobileMenuOpen(false)} />
       )}
+
+  </div>
     </header>
   );
 };
