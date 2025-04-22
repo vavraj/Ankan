@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <div className="bg-ankan-beige min-h-[550px] min-w-full">
+    <div className="bg-ankan-beige min-h-[600px] min-w-full">
       {/* <div className="relative flex gap-20 h-[650px] min-w-full m-0 p-0"> */}
       <div className="relative flex justify-between h-[550px] min-w-full m-0 p-0">
         <div className="z-0 overflow-clip items-center mb-8 md:mb-0 m-0 p-0">
@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
         
         {/* <div className="flex flex-col justify-center items-start md:items-start text-center md:mr-20 md:text-left"> */}
-        <div className="flex flex-col justify-center items-center md:items-start text-center md:mr-20 md:text-left">
+        <div className="flex flex-col justify-center items-end md:items-start text-center md:mr-20 md:text-left">
           <img
             src="/ankan.png"
             alt="Ankan Logo"
