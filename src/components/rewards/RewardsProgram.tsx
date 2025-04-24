@@ -49,7 +49,7 @@ const RewardsProgram = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="h-96 bg-cover bg-center relative mb-24" 
+        className="h-[600px] bg-cover bg-center relative mb-24" 
         style={{ backgroundImage: `url(/lovable-uploads/backgrounds/bg1.png)` }}
       >
         <div className="absolute inset-0 bg-ankan-brown bg-opacity-70 flex flex-col justify-center items-center text-white">
