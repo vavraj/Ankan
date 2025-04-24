@@ -283,13 +283,17 @@
 
 // export default AboutPaitkar;
 
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Facebook, Instagram, Youtube, Twitter, ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const AboutPaitkar = () => {
+  // for email handling
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
   // Scroll animation effect
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -822,16 +826,38 @@ const AboutPaitkar = () => {
               <input 
                 type="email" 
                 placeholder="Your email address" 
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 className="px-4 py-3 rounded-md bg-white/10 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 flex-grow"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={()=>{
+                  if (email.trim()!=''){
+                    setSubscribed(true);
+                    setTimeout(() => {
+                      setSubscribed(false)
+                    }, 3000);
+                    setEmail('');
+                  }
+                }}
                 className="px-6 py-3 bg-white text-ankan-brown font-medium rounded-md hover:bg-gray-200 transition-all"
               >
                 Subscribe
               </motion.button>
             </div>
+            {subscribed && (
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="mt-4 text-ankan-beige font-medium"
+              >
+                Thanks for subscribing!
+              </motion.p>
+              )
+            }
           </motion.div>
         </div>
       </div>
