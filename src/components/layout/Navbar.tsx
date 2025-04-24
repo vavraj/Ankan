@@ -50,7 +50,7 @@ const Navbar = () => {
             </Link>
           </div>
           
-          <div className="flex items-center gap-6 translate-x-[80px]">
+          <div className="flex items-center gap-6 translate-x-[40px]">
             <Link to="/cart" className="hover:text-gray-200">
               <ShoppingCart size={24} />
             </Link>
