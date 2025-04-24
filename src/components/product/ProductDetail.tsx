@@ -130,14 +130,16 @@ interface ProductDetails {
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   const [isAdded, setIsAdded] = useState(false);
   const [customRequest, setCustomRequest] = useState("");
+  const [isRequestSent, setIsRequestSent] = useState(false);
 
   const handleAddToBag = () => {
     setIsAdded(true);
   };
 
   const handleSendRequest = () => {
-    alert(`Custom request sent: ${customRequest}`);
+    setIsRequestSent(true);
     setCustomRequest(""); // Clear the input field after submission
+    setTimeout(() => setIsRequestSent(false), 3000);
   };
 
   return (
@@ -275,6 +277,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               >
                 Send Request
               </button>
+              {isRequestSent && (
+  <p className="text-green-600 mt-2 text-sm text-center font-medium">Request sent successfully!</p>
+)}
+
             </div>
           </div>
         </div>
