@@ -34,7 +34,8 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/logo2.png" 
                 alt="Ankan Small Logo" 
-                className="w-8 h-8" 
+                className="w-8 h-8 -translate-x-[200px]" 
+
               />
             </Link>
           </div>
@@ -49,7 +50,7 @@ const Navbar = () => {
             </Link>
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 translate-x-[200px]">
             <Link to="/cart" className="hover:text-gray-200">
               <ShoppingCart size={24} />
             </Link>
