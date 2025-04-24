@@ -102,7 +102,7 @@ const Artisans = () => {
   ];
 
   return (
-    <div className="bg-gray-800 text-white">
+    <div className=" text-white" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
       {/* Hero Section */}
       
       <div className="relative h-96 bg-origin-contain bg-center" style={{ backgroundImage: 'url("/lovable-uploads/backgrounds/bg1.png")' }}>
@@ -148,7 +148,7 @@ const Artisans = () => {
       </div>
 
       {/* Amadubi Section */}
-      <div className="bg-gray-700 py-6" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
+      <div className="py-6" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
   <div className="container mx-auto px-4">
     <h2 className="text-3xl font-bold text-center mb-8">AMADUBI</h2>
     
@@ -172,8 +172,8 @@ const Artisans = () => {
 
 
       {/* Meet The Makers */}
-      <div className="bg-gray-700 mx-0 px-0 py-16" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
-        <div className="container mx-0 px-0" >
+      <div className="py-16 container px-0 w-full" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
+        {/* <div className="container  px-0 " > */}
           <h2 className="text-3xl font-bold text-center mb-16">MEET THE MAKERS</h2>
           
           <div className="flex flex-wrap justify-between gap-8 mb-16 p-10">
@@ -188,7 +188,7 @@ const Artisans = () => {
           </div>
           
           {/* Artisan Profiles */}
-          <div className="" >
+          <div className="">
             {/* Anil Chitrakar */}
             <div className="mb-16">
               <div className="flex flex-col items-center md:flex-row bg-[#d6d4cd] text-[#58504D]">
@@ -218,7 +218,7 @@ const Artisans = () => {
             {/* Vijay Chitrakar */}
             <div className="mb-16">
               <div className="flex flex-col md:flex-row bg-[#d6d4cd] text-[#58504D] h-[530px]">
-                <div className="w-full h-80 md:h-auto -translate-y-20">
+                <div className="w-full h-80 md:h-auto -translate-x-[200px] -translate-y-20">
                   <img src="/lovable-uploads/vijay2.png" alt="VIJAY CHITRAKAR" />
                 </div>
                 <div className="w-full md:w-1/2 p-8">
@@ -229,9 +229,9 @@ const Artisans = () => {
             </div>
 
             {/* Moni */}
-            <div className="mb-16">
-              <div className="flex flex-col md:flex-row-reverse h-[373px]">
-                <div className="w-full h-80 md:h-auto -translate-y-44 ">
+            <div className="mb-16 h-[320px]">
+              <div className="flex flex-col md:flex-row-reverse">
+                <div className="w-full h-80 md:h-auto -translate-y-[230px] ">
                   <img src="/lovable-uploads/moni2.png" alt="MONI"/>
                 </div>
                 <div className="w-full md:w-1/2 p-8">
@@ -255,9 +255,9 @@ const Artisans = () => {
             </div>
 
             {/* Poornima Gopey */}
-            <div className="mb-16">
+            <div className="mb-16 h-[222px]">
               <div className="flex flex-col items-end md:flex-row-reverse">
-                <div className="w-full h-[300px] -translate-y-60">
+                <div className="w-full h-[300px] translate-x-[400px] -translate-y-[300px]">
                   <img src="/lovable-uploads/poornima2.png" alt="POORNIMA GOPEY" className='h-[600px]'/>
                 </div>
                 <div className="w-full md:w-1/2 p-8">
@@ -267,7 +267,7 @@ const Artisans = () => {
               </div>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
 
       {/* Stay Connected */}
