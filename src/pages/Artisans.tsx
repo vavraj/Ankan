@@ -148,27 +148,27 @@ const Artisans = () => {
       </div>
 
       {/* Amadubi Section */}
-      <div className="py-6" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-8">AMADUBI</h2>
-    
-    <div className="mt-4 text-center">
-      <img 
-        src="lovable-uploads/backgrounds/jharkhand.png" 
-        alt="Map of Jharkhand" 
-        className="mx-auto w-1/4 h-auto"
-      />
-    </div>
+      <div className="py-6 h-[570px]" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8">AMADUBI</h2>
+          
+          <div className="mt-4 text-center -translate-y-[100px]">
+            <img 
+              src="lovable-uploads/backgrounds/jharkhand.png" 
+              alt="Map of Jharkhand" 
+              className="mx-auto w-1/4 h-auto"
+            />
+          </div>
 
-    <p className="text-cente mx-auto mt-4">
-      Amadubi, a quaint village in Jharkhand's East Singhbhum district, is the heart of Paitkar art, home to generations 
-      of skilled Chitrakar artisans. Known as the land of scroll painters, this culturally rich cluster thrives on 
-      storytelling through intricate paintings, using natural dyes and handmade paper. Amidst lush landscapes and tribal 
-      heritage, Amadubi stands as a living museum of India's artistic legacy, preserving and promoting Paitkar art against 
-      the tides of time.
-    </p>
-  </div>
-</div>
+          <p className="text-cente mx-auto mt-4 -translate-y-[150px]">
+            Amadubi, a quaint village in Jharkhand's East Singhbhum district, is the heart of Paitkar art, home to generations 
+            of skilled Chitrakar artisans. Known as the land of scroll painters, this culturally rich cluster thrives on 
+            storytelling through intricate paintings, using natural dyes and handmade paper. Amidst lush landscapes and tribal 
+            heritage, Amadubi stands as a living museum of India's artistic legacy, preserving and promoting Paitkar art against 
+            the tides of time.
+          </p>
+        </div>
+      </div>
 
 
       {/* Meet The Makers */}
