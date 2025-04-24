@@ -55,13 +55,63 @@ import ArtisanProfile from '@/components/about/ArtisanProfile';
 // };
 
 // export default Artisans;
-import React from 'react';
+// import React from 'react';
 
 import { Link } from 'react-router-dom';
 
 import { Facebook, Instagram, Youtube, Twitter } from 'lucide-react';
 
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
+
 const Artisans = () => {
+
+  // Fade-in animation variant
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  // Text reveal animation variant
+  const textReveal = {
+    hidden: { opacity: 0, y: 15 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * i,
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    })
+  };
+
+  // Scroll trigger effect
+  useEffect(() => {
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.scroll-animate');
+      
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const isVisible = rect.top <= window.innerHeight * 0.85;
+        
+        if (isVisible) {
+          el.classList.add('active');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on mount
+    
+    return () => window.removeEventListener('scroll', animateOnScroll);
+  }, []);
+
+
   const artisans = [
     {
       name: 'ANIL CHITRAKAR',
@@ -101,74 +151,221 @@ const Artisans = () => {
     },
   ];
 
+  
   return (
     <div className=" text-white" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
       {/* Hero Section */}
       
-      <div className="relative h-96 bg-origin-contain bg-center" style={{ backgroundImage: 'url("/lovable-uploads/backgrounds/bg1.png")' }}>
-        <div className="absolute inset-0 bg-ankan-brown opacity-75"></div>
-        <div className="relative h-full flex items-center justify-center">
-          <div className="text-center px-4 py-16">
-            <h1 className="text-3xl font-mono mb-6">
-              Immerse yourself in the rich tapestry of heritage and storytelling,
-              where every stroke of Paitkar art weaves a legacy of culture,
-              tradition, and timeless craftsmanship
-            </h1>
-          </div>
+      {/* Hero Section with Animation */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative h-96 bg-origin-contain bg-center overflow-hidden"
+        style={{ backgroundImage: 'url("/lovable-uploads/backgrounds/bg1.png")' }}
+      >
+        <div className="absolute inset-0 bg-ankan-brown opacity-75">
+          {/* Subtle background pattern animation */}
+          <motion.div 
+            className="absolute inset-0 opacity-20"
+            animate={{ 
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{ 
+              duration: 20, 
+              ease: "linear", 
+              repeat: Infinity, 
+              repeatType: "reverse" 
+            }}
+            style={{ 
+              backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.2\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+              backgroundSize: '60px 60px'
+            }}
+          />
         </div>
-      </div>
+        <div className="relative h-full flex items-center justify-center">
+          <motion.div 
+            className="text-center px-4 py-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.8, 
+              delay: 0.3,
+              ease: "easeOut"
+            }}
+          >
+            <motion.h1 
+              className="text-3xl font-mono mb-6"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              {/* Split text for staggered animation */}
+              {["Immerse yourself in the rich tapestry of heritage and storytelling,",
+                "where every stroke of Paitkar art weaves a legacy of culture,",
+                "tradition, and timeless craftsmanship"].map((line, i) => (
+                <motion.span
+                  key={i}
+                  className="block"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 + (i * 0.2) }}
+                >
+                  {line}
+                </motion.span>
+              ))}
+            </motion.h1>
+          </motion.div>
+        </div>
+      </motion.div>
 
       {/* Philosophy Section */}
-      <div className=" bg-ankan-darkBrown py-16" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
+      <div className="bg-ankan-darkBrown py-16 scroll-animate" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-6">At ANKAN, we believe that art is not just an expression, but a legacy.</h2>
+          <motion.h2 
+            className="text-2xl font-bold mb-6"
+            variants={textReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            custom={1}
+          >
+            At ANKAN, we believe that art is not just an expression, but a legacy.
+          </motion.h2>
           
-          <p className="mb-8">
+          <motion.p 
+            className="mb-8"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             Our platform is dedicated to the timeless beauty of Paitkar art, one of India's oldest scroll painting traditions. 
             Rooted in folklore and mythology, each Paitkar painting is a canvas of storytelling, preserving the cultural soul 
             of Jharkhand through intricate brushstrokes and natural hues. At ANKAN, we bridge tradition with modern appreciation, 
             bringing this exquisite craft to the world.
-          </p>
+          </motion.p>
           
-          <h3 className="text-xl font-bold mb-4">Our Philosophy:</h3>
-          <p className="mb-8">
+          <motion.h3 
+            className="text-xl font-bold mb-4"
+            variants={textReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            custom={2}
+          >
+            Our Philosophy:
+          </motion.h3>
+          
+          <motion.p 
+            className="mb-8"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             At ANKAN, we honor the artisans who breathe life into every scroll. Their stories, passed down through generations, 
             are not just painted—they are lived. We believe in sustaining this artistic heritage by connecting the world to the 
             hands that craft it. Every piece is a testament to tradition, craftsmanship, and cultural richness, ensuring that 
             Paitkar art continues to thrive.
-          </p>
+          </motion.p>
           
-          <h3 className="text-xl font-bold mb-4">Experience the Art of Storytelling:</h3>
-          <p className="mb-8">
+          <motion.h3 
+            className="text-xl font-bold mb-4"
+            variants={textReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            custom={3}
+          >
+            Experience the Art of Storytelling:
+          </motion.h3>
+          
+          <motion.p 
+            className="mb-8"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             Explore our curated collection and witness the magic of Paitkar art. Whether as an heirloom, a collector's piece, 
             or a unique decor statement, each artwork is a gateway to India's rich artistic past. Embrace the strokes of history, 
             preserve the legacy, and become part of the ANKAN story—where every scroll tells a tale.
-          </p>
+          </motion.p>
         </div>
       </div>
 
       {/* Amadubi Section */}
-      <div className="py-6 h-[570px]" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
+      <div className="py-6 h-[680px] scroll-animate" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">AMADUBI</h2>
+          <motion.h2 
+            className="text-3xl font-bold text-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            AMADUBI
+          </motion.h2>
           
-          <div className="mt-4 text-center -translate-y-[100px]">
-            <img 
+          <motion.div 
+            className="mt-4 text-center -translate-y-[100px]"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.img 
               src="lovable-uploads/backgrounds/jharkhand.png" 
               alt="Map of Jharkhand" 
               className="mx-auto w-1/4 h-auto"
+              whileHover={{ 
+                scale: 1.05,
+                filter: "drop-shadow(0 0 12px rgba(255,255,255,0.3))",
+                transition: { duration: 0.3 }
+              }}
             />
-          </div>
+          </motion.div>
 
-          <p className="text-cente mx-auto mt-4 -translate-y-[150px]">
+          <motion.p 
+            className="text-center mx-auto mt-4 -translate-y-[100px]"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             Amadubi, a quaint village in Jharkhand's East Singhbhum district, is the heart of Paitkar art, home to generations 
             of skilled Chitrakar artisans. Known as the land of scroll painters, this culturally rich cluster thrives on 
             storytelling through intricate paintings, using natural dyes and handmade paper. Amidst lush landscapes and tribal 
             heritage, Amadubi stands as a living museum of India's artistic legacy, preserving and promoting Paitkar art against 
             the tides of time.
-          </p>
+          </motion.p>
         </div>
       </div>
+
+      {/* Add CSS for scroll animations */}
+      <style >{`
+        .scroll-animate {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .scroll-animate.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        @keyframes textGlow {
+          0% { text-shadow: 0 0 10px rgba(255,255,255,0.1); }
+          50% { text-shadow: 0 0 15px rgba(255,255,255,0.3); }
+          100% { text-shadow: 0 0 10px rgba(255,255,255,0.1); }
+        }
+        
+        h2, h3 {
+          animation: textGlow 5s infinite;
+        }
+      `}</style>
 
 
       {/* Meet The Makers */}
