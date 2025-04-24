@@ -54,7 +54,7 @@ const Navbar = () => {
                 <img 
                   src="/lovable-uploads/logo2.png" 
                   alt="Ankan Small Logo" 
-                  className="w-8 h-8 -translate-x-[20px]" 
+                  className="w-8 h-8" 
                 />
               </Link>
             </motion.div>
@@ -75,7 +75,7 @@ const Navbar = () => {
             </motion.div>
             
             <motion.div 
-              className="flex items-center gap-6 translate-x-[30px]"
+              className="flex items-center gap-6"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
