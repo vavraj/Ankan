@@ -58,13 +58,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
     >
       {/* Overlay on the right half */}
       <motion.div 
-        className="w-[85%] bg-black/30 backdrop-blur-sm" 
+        className="w-[80%] bg-black/30 backdrop-blur-sm" 
         onClick={onClose}
       />
 
       {/* Actual menu on the left half */}
       <motion.div 
-        className="w-[15%] bg-[#E9E4DE] h-full overflow-y-auto shadow-xl"
+        className="w-[20%] bg-[#E9E4DE] h-full overflow-y-auto shadow-xl"
         variants={menuVariants}
       >
         <div className="flex justify-end p-4">
