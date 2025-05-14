@@ -373,7 +373,7 @@ const Artisans = () => {
         {/* <div className="container  px-0 " > */}
           <h2 className="text-3xl font-bold text-center mb-16">MEET THE MAKERS</h2>
           
-          <div className="flex flex-wrap justify-between gap-8 mb-16 p-10">
+          <div className="flex flex-wrap justify-center sm:justify-between gap-8 mb-16 p-4 sm:p-10">
             {artisans.map((artisan, index) => (
               <div key={index} className="w-40 flex flex-col items-center">
                 <div className="w-40 h-40 rounded-full overflow-hidden" style={{ backgroundColor: 'rgb(88, 80, 77)' }}>
