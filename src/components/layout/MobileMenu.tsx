@@ -56,13 +56,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
       exit="exit"
       variants={overlayVariants}
     >
-      {/* Overlay on the right half */}
-      <motion.div 
+
+      {/* <motion.div 
         className="w-[80%] bg-black/30 backdrop-blur-sm" 
         onClick={onClose}
       />
 
-      {/* Actual menu on the left half */}
+
       <motion.div 
         className="w-[25%] bg-[#E9E4DE] h-full overflow-y-auto shadow-xl"
         variants={menuVariants}
@@ -75,7 +75,29 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
           >
             <X size={24} />
           </motion.button>
-        </div>
+        </div> */}
+        
+
+        <motion.div 
+          className="w-[80%] md:w-[80%] bg-black/30 backdrop-blur-sm" 
+          onClick={onClose}
+        />
+
+
+        <motion.div 
+          className="w-[70%] sm:w-[50%] md:w-[40%] lg:w-[30%] xl:w-[25%] bg-[#E9E4DE] h-full overflow-y-auto shadow-xl text-sm sm:text-base"
+          variants={menuVariants}
+        >
+          <div className="flex justify-end p-3 sm:p-4">
+            <motion.button 
+              onClick={onClose} 
+              className="text-ankan-brown transition-transform duration-300 hover:scale-110 hover:rotate-90"
+              whileHover={{ rotate: 90 }}
+            >
+              <X size={20} className="sm:hidden" />
+              <X size={24} className="hidden sm:block" />
+            </motion.button>
+          </div>
 
         <div className="p-8">
           <nav className="flex flex-col gap-6 text-2xl items-center text-center">
