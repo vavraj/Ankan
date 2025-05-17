@@ -385,6 +385,7 @@ const Artisans = () => {
           </div>
           
           {/* Artisan Profiles */}
+          <div className="hidden sm:hidden md:block">
           <div className="text-justify">
             {/* Anil Chitrakar */}
             <div className="mb-16">
@@ -464,6 +465,7 @@ const Artisans = () => {
               </div>
             </div>
           </div>
+        </div>
         {/* </div> */}
       </div>
 
