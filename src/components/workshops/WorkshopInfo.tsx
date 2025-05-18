@@ -127,7 +127,7 @@ const WorkshopInfo: React.FC<WorkshopInfoProps> = ({ onBookWorkshop }) => {
       >
         <div className="absolute inset-0 bg-ankan-brown bg-opacity-70 flex flex-col justify-center items-center text-white">
           <motion.h1 
-            className="text-4xl font-bold mb-6"
+            className="text-3xl sm:text-4xl font-bold mb-6"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}

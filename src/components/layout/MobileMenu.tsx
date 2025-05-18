@@ -106,7 +106,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
                 return (
                   <motion.h2 
                     key={`header-${i}`}
-                    className="text-3xl font-medium mt-6 mb-4 w-full text-center relative"
+                    className="text-xl sm:text-3xl font-medium mt-6 mb-4 w-full text-left sm:text-center relative"
                     custom={i}
                     variants={itemVariants}
                     initial="hidden"
@@ -131,11 +131,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
                     variants={itemVariants}
                     initial="hidden"
                     animate="visible"
-                    className="w-full text-center"
+                    className="w-full text-left sm:text-center"
                   >
                     <Link 
                       to={item.path} 
-                      className={`${item.isHeader ? "text-4xl font-semibold" : "text-xl"} transition-all duration-300 hover:text-ankan-brown w-full inline-block relative group`} 
+                      className={`${item.isHeader ? "text-4xl font-semibold" : "text-base sm:text-xl"} transition-all duration-300 hover:text-ankan-brown w-full inline-block relative group`} 
                       onClick={onClose}
                     >
                       {item.text}
