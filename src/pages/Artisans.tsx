@@ -195,7 +195,7 @@ const Artisans = () => {
             }}
           >
             <motion.h1 
-              className="text-3xl font-mono mb-6"
+              className="sm:text-3xl text-2xl font-mono mb-6"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
