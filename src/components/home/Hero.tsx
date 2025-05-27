@@ -21,11 +21,12 @@ const Hero = () => {
             alt="Ankan Logo"
             className="h-24 sm:h-32 md:h-40 w-64 sm:w-80 md:w-96 mb-4"
           />
-          <p className="min-w-full text-base sm:text-lg mb-6 md:mb-8 text-center md:text-left">The Parable of Paitkar</p>
+          <p className="flex justify-center items-center min-w-full text-base sm:text-lg mb-6 md:mb-8 text-center md:text-left">The Parable of Paitkar</p>
+          
           
           <div className="min-w-full flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
-            <Link to="/collections" className="px-6 sm:px-8 py-2 sm:py-3 bg-[#D6D4CD] border-2 border-[#58504D] rounded-xl text-gray-800 hover:bg-gray-200 transition-colors text-xs sm:text-sm">Shop</Link>
-            <Link to="/support-artisan" className="px-6 sm:px-8 py-2 sm:py-3 bg-[#58504D] text-white rounded-xl hover:bg-ankan-darkBrown transition-colors text-xs sm:text-sm">Adopt</Link>
+            <Link to="/collections" className="px-6 sm:px-8 py-2 sm:py-3 bg-[#D6D4CD] border-2 border-[#58504D] rounded-xl text-gray-800 hover:bg-gray-200 transition-colors text-xs sm:text-sm sm:translate-x-[77px]">Shop</Link>
+            <Link to="/support-artisan" className="px-6 sm:px-8 py-2 sm:py-3 bg-[#58504D] text-white rounded-xl hover:bg-ankan-darkBrown transition-colors text-xs sm:text-sm sm:translate-x-[77px]">Adopt</Link>
           </div>
         </div>
       </div>
