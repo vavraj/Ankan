@@ -1,10 +1,47 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useAuth } from '@/contexts/AuthContext';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [focused, setFocused] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { login } = useAuth();
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !password) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await login(email, password);
+      toast({
+        title: "Success",
+        description: "Login successful!",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Invalid credentials. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -101,46 +138,38 @@ const LoginForm = () => {
           Sign in with your email and password or create a profile if you are new
         </motion.p>
         
-        <motion.div 
-          className="mt-6"
-          variants={fadeIn}
-        >
-          <motion.div
-            initial={{ borderColor: "transparent" }}
-            animate={{ borderColor: focused ? "#000" : "transparent" }}
-            transition={{ duration: 0.3 }}
-            className="relative"
+        <form onSubmit={handleSubmit}>
+          <motion.div 
+            className="mt-6 space-y-4"
+            variants={fadeIn}
           >
-            <motion.input
+            <Input
               type="email"
               placeholder="Email*"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
-              className="ankan-input mb-4 w-full transition-all duration-300 focus:outline-none border px-4 py-2 rounded"
-              whileFocus={{ boxShadow: "0 0 0 2px rgba(0,0,0,0.1)" }}
+              required
+              className="w-full"
             />
-            {email && (
-              <motion.span
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-green-500"
-              >
-                ✓
-              </motion.span>
-            )}
+            
+            <Input
+              type="password"
+              placeholder="Password*"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="w-full"
+            />
+            
+            <Button 
+              type="submit"
+              className="w-full"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "SIGNING IN..." : "CONTINUE"}
+            </Button>
           </motion.div>
-          
-          <motion.button 
-            className="ankan-btn-primary w-full"
-            whileHover={buttonHover}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            CONTINUE
-          </motion.button>
-        </motion.div>
+        </form>
       </motion.div>
       
       <motion.div 

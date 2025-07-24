@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ShoppingCart, User, Search, Menu, X } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { ShoppingCart, User, Search, Menu, X, Plus, LogOut } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 import { 
   CommandDialog, 
@@ -10,13 +10,21 @@ import {
   CommandGroup, 
   CommandItem 
 } from "@/components/ui/command";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { user, logout } = useAuth();
+  
+  const isAdminDashboard = location.pathname === '/admin-dashboard';
   
   // Sample search data - in a real app, this would come from your product database
   const searchItems = [
@@ -83,9 +91,47 @@ const Navbar = () => {
               <Link to="/cart" className="hover:text-gray-200 transition-transform duration-300 hover:scale-110">
                 <ShoppingCart size={24} />
               </Link>
-              <Link to="/account" className="hover:text-gray-200 transition-transform duration-300 hover:scale-110">
-                <User size={24} />
-              </Link>
+              
+              {/* Admin Add Product Button */}
+              {user?.isAdmin && isAdminDashboard && (
+                <Button
+                  onClick={() => navigate('/add-product')}
+                  variant="outline"
+                  size="sm"
+                  className="text-white border-white hover:bg-white hover:text-gray-800"
+                >
+                  <Plus size={16} className="mr-1" />
+                  <span className="hidden sm:inline">Add Product</span>
+                </Button>
+              )}
+              
+              {/* User Authentication */}
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="text-white hover:text-gray-200 hover:bg-transparent">
+                      <User size={24} />
+                      <span className="hidden sm:inline ml-1">{user.name}</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem onClick={() => navigate('/profile')}>
+                      Profile
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => navigate('/orders')}>
+                      Orders
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={logout}>
+                      <LogOut size={16} className="mr-2" />
+                      Logout
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link to="/account" className="hover:text-gray-200 transition-transform duration-300 hover:scale-110">
+                  <User size={24} />
+                </Link>
+              )}
               <button 
                 className="hover:text-gray-200 transition-transform duration-300 hover:scale-110"
                 onClick={() => setSearchOpen(true)}

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import { AuthProvider } from "./contexts/AuthContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Shop from "./pages/Shop";
@@ -30,9 +31,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex m-0 p-0 flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">
+        <AuthProvider>
+          <div className="flex m-0 p-0 flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/collections" element={<Shop />} />
@@ -51,11 +53,13 @@ const App = () => (
               <Route path="/support-artisan" element={<SupportArtisan />} />
               <Route path="/customize" element={<Customize />} />
               <Route path="/donation-success" element={<DonationSuccess />} />
+              <Route path="/admin-dashboard" element={<Index />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
         </div>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
